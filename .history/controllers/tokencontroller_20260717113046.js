@@ -92,13 +92,6 @@ exports.syncState = async (req, res) => {
         let directory;
 
         await session.withTransaction(async () => {
-            const existing = await Entity.findOne({
-        referenceToken: decoded.rid
-    }).session(session);
-
-    if (existing) {
-        throw new Error("Reference already synced.");
-    }
 
             entity = await Entity.create([{
                 referenceToken: decoded.rid
@@ -116,9 +109,7 @@ exports.syncState = async (req, res) => {
 
             await entity[0].save({ session });
 
-            directory[0].entity = entity[0]._id;
-
-            await directory[0].save({ session });
+            
 
         });
 

@@ -91,8 +91,7 @@ exports.syncState = async (req, res) => {
         let entity;
         let directory;
 
-        await session.withTransaction(async () => {
-            const existing = await Entity.findOne({
+        await session.withTransaction(async () => {const existing = await Entity.findOne({
         referenceToken: decoded.rid
     }).session(session);
 

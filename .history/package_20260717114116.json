@@ -1,11 +1,10 @@
 {
   "name": "signedtokenapi",
   "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "node app.js"
-  },
+  "main": "Server.js",
+  
+    
+  ,
   "keywords": [],
   "author": "",
   "license": "ISC",
